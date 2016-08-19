@@ -8,6 +8,7 @@
 (function() {
   this.App || (this.App = {});
 
-  App.cable = ActionCable.createConsumer("ws://cable.pollish.dev");
+  // App.cable = ActionCable.createConsumer("ws://cable.pollish.dev");
+  App.cable = ActionCable.createConsumer();
 
 }).call(this);

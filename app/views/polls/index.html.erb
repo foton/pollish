@@ -1,0 +1,5 @@
+<ul>
+  <% @polls.each do |poll| %>
+    <li><%= link_to poll.name, poll %></li>
+  <% end %>
+</ul>
