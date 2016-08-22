@@ -4,5 +4,6 @@ Rails.application.routes.draw do
 
   resources :polls, only: [:index, :show] do
     resource :vote, controller: :vote, only: [:show, :create]
+    resource :results, only: [:index]
   end
 end
