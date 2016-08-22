@@ -1,5 +1,8 @@
 <ul>
   <% @polls.each do |poll| %>
     <li><%= link_to poll.name, poll %></li>
+    <% if user_signed_in? %>
+      <li>[<%= link_to "results", poll_results_path(poll) %>]</li>
+    <% end %>
   <% end %>
 </ul>

@@ -1,7 +1,6 @@
 class VoteController < ApplicationController
   def show
     @poll = Poll.find(params[:poll_id])
-    PollingChannel.broadcast_to(@poll, foo: "bar")
   end
 
   def create
