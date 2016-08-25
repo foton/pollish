@@ -1,3 +1,3 @@
-<h1><%= @poll.name %> <small>:: <%= @poll.description %></small></h1>
+<h1><%= @poll.name %> <small>:: <%= @poll.code %></small></h1>
 
-<%= link_to "sign out", destroy_user_session_path, data: {method: :delete} %>
+<%= render partial: @poll.code %>

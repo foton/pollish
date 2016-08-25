@@ -5,10 +5,20 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.min.js" %>
   </head>
 
   <body>
+    <%= link_to "sign out", destroy_user_session_path, data: {method: :delete} %>
+
+    <% if flash[:alert].present? %>
+      <div class="alert"><%= flash[:alert] %></div>
+    <% end %>
+    <% if flash[:notice].present? %>
+      <div class="notice"><%= flash[:notice] %></div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
