@@ -7,9 +7,9 @@ var myChart = new Chart(ctx, {
     datasets: [{
       label: '# of Votes',
       data: [
-      <%= @poll.votes.find_all {|v| v.value == "yes"}.size %>,
-      <%= @poll.votes.find_all {|v| v.value == "no"}.size %>,
-      <%= @poll.votes.find_all {|v| v.value == "maybe"}.size %>
+        <%= @poll.votes.find_all {|v| v.value == "yes"}.size %>,
+        <%= @poll.votes.find_all {|v| v.value == "no"}.size %>,
+        <%= @poll.votes.find_all {|v| v.value == "maybe"}.size %>
       ],
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
