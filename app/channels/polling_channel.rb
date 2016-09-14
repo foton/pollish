@@ -1,6 +1,6 @@
 class PollingChannel < ApplicationCable::Channel
   def subscribed
-    poll = Poll.find_by(name: params[:poll])
+    poll = Poll.where(code: params[:code]).first
     stream_for poll
   end
 

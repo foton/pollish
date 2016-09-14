@@ -4,6 +4,7 @@ class VotesController < ApplicationController
     @vote = @poll.votes.build(vote_params)
 
     if @vote.save
+      PollingChannel.broadcast_to(@poll, @poll.results)
       session[@poll.code] = true
       redirect_to polls_path, notice: message
     else
